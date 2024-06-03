@@ -1,0 +1,98 @@
+@import url('https: //fonts.googleapis.com/css?family=Roboto+Condensed:300');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --primary-color: #ff5757;
+    --primary-color-dark: #ff2424;
+    --black: #444;
+    --red: var(--primary-color);
+    --orange: #ff9147;
+    --yellow: #fff069;
+    --blue: #4ee4ff;
+    --pink: #ff70b3;
+    --brown: #594944;
+    --teal: #405955;
+    --mint: #56ffe9;
+    --head-radius-top: 50% 80px;
+    --head-radius-bottom: 55px;
+}
+
+
+
+
+
+
+
+body {
+    background-color: var(--primary-color);
+    font-family: 'Roboto+Condensed', sans-serif;
+    line-height: 1.875;
+    /* 从上到下，居中对齐 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 配置精灵球的容器 */
+.pokeball-container{
+    margin: 50px auto;
+
+}
+
+.ball {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: transparent; /*颜色透明*/
+    background-image: 
+    /* 径向渐变做圆环 最中间的那个圆和一个边框 */
+    radial-gradient(circle, transparent 11%, #a1a1aa 12%, transparent 12%),
+    /* 白色的圆环 */
+    radial-gradient(circle, #fff 16%, transparent 16%),
+    /* 黑色的圆环 */
+    radial-gradient(circle, #000 20%, transparent 20%),
+    /* 线性渐变做球的两半颜色 红色的上半部分*/
+    linear-gradient(to bottom, rgb(253, 1, 1) 48%, transparent 48%),
+    /* 中间的黑色线段部分 */
+    linear-gradient(to bottom, transparent 48%, #000 48%, #000 52%, transparent 52%),
+    /* 白色的下面部分 */
+    linear-gradient(to bottom, transparent 52%, rgb(254, 254, 254) 52%)
+    ;
+
+    background-repeat: no-repeat;
+    /* 设置形状的大小和宽度 */
+    background-size: 
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        96% 100%,
+        100% 100%
+    ;
+    /* 设置各个形状的位置 */
+    background-position: 
+        0 0,
+        0 0,
+        0 0,
+        0 0,
+        50% 0,
+        0 0
+    ;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: calc(50% - 170px);
+        left: calc(50% - 16px);
+        background-color: red;
+        width: 33px;
+        height: 33px;
+        border-radius: 50%;
+    }
+}
