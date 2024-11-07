@@ -124,3 +124,176 @@ body {
     /*设置精灵球自行旋转的动画：名称：rotate；持续时间：5s；无限循环。*/
     animation: rotate 5s infinite;
 }
+/*创建展示精灵的容器*/
+.container-box {
+    position: relative;
+    width: 980px;
+    margin: 40px auto;
+    padding: 65px;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 10px 10px 0 var(--primary-color-dark);
+    background-color: #fff;
+}
+/*配置精灵们的统一参数*/
+.pokemon {
+    position: relative;
+    display: inline-block;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        bottom: -30px;
+        height: 40px;
+        width: 25px;
+        border-bottom-left-radius: 50% 40px;
+        border-bottom-right-radius: 50% 40px;
+    }
+    /*设置左右两只手*/
+    &::before {
+        left: 40px;
+        transform: rotate(-10deg);
+    }
+
+    &::after {
+        right: 40px;
+        transform: rotate(10deg);
+    }
+}
+/*头部的通用样式*/
+.head {
+    position: relative;
+    z-index: 5;
+    height: 155px;
+    width: 200px;
+    border-top-left-radius: var(--head-radius-top);
+    border-top-right-radius: var(--head-radius-top);
+    border-bottom-left-radius: var(--head-radius-bottom);
+    border-bottom-right-radius: var(--head-radius-bottom);
+    overflow: hidden;
+
+    /*头部里面的div全部设置为绝对定位，方便移动到相应的位置*/
+    > div {
+        position: absolute;
+    }
+
+    .eye {
+        bottom: 35px;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        /*暂时把每个眼睛设置为黑色，后期各自精灵的眼睛配置不一样的颜色*/
+        background-color: #000;
+
+        /*左眼*/
+        &:nth-child(1) {
+            left: 30px;
+        }
+        /*右眼*/
+        &:nth-child(2) {
+            right: 30px;
+        }
+    }
+
+}
+/*嘴巴的样式*/
+.mouth {
+    left: 50%;
+    bottom: 40px;
+    height: 10px;
+    width: 25px;
+    transform: translateX(-50%);
+    /*利用伪元素创建两个下弦月嘴巴*/
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        border-radius: 50%;
+        border-bottom: 3px var(--black) solid;
+    }
+
+    &::after {
+        left: 50%;
+    }
+
+}
+/*脸颊的样式*/
+.cheek {
+    bottom: 15px;
+    height: 15px;
+    width: 30px;
+    border-radius: 50px / 30px;
+    background-color: rgba(220, 136, 194, 0.8);
+    
+    /*:nth-child() 选择器根据父元素内的所有兄弟元素的位置来选择子元素。*/
+    &:nth-child(3) {
+        left: 10px;
+    }
+    &:nth-child(4) {
+        right: 10px;
+    }
+}
+
+/*皮卡丘的单独样式*/
+
+#pika {
+    /*皮卡丘耳朵的样式*/
+    .ear {
+        position: absolute;
+        top: -30px;
+        height: 80px;
+        width: 40px;
+        /*通过边角的弧度，裁剪出需要的形状*/
+        border-top-left-radius: 25px 100%;
+        border-top-right-radius: 25px 100%;
+        background-color: var(--yellow);
+        overflow: hidden;
+        /*更改变换的中心为底部中心*/
+        transform-origin: center bottom;
+        transition: 0.3s;
+
+        /*增加耳朵上的黑色*/
+        &::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            height: 40px;
+            width: 150%;
+            background-color: var(--black);
+        }
+        /*调整出两个耳朵*/
+        &:nth-child(1) {
+            left: 5px;
+            transform: rotate(-20deg);
+            /*使耳朵的黑色部分也一起倾斜*/
+            &::after {
+                transform: rotate(-15deg);
+            }
+        }
+
+        &:nth-child(2) {
+            right: 5px;
+            transform: rotate(20deg);
+
+            &::after {
+                transform: rotate(15deg);
+            }
+        }
+    }
+
+    /*皮卡丘头部的样式*/
+    .head {
+        background-color: var(--yellow);
+    }
+
+    /*皮卡丘眼睛的样式*/
+    .eye {
+        background-color: var(--black);
+    }
+}
