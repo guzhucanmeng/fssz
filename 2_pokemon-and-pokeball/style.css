@@ -88,7 +88,7 @@ body {
     &::before {
         content: '';
         position: absolute;
-        top: calc(50% - 170px);
+        top: calc(50% - 223px);
         left: calc(50% - 16px);
         background-color: red;
         width: 33px;
