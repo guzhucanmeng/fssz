@@ -22,8 +22,20 @@
     --head-radius-bottom: 55px;
 }
 
+/*动画设置区*/
+@keyframes rotate {
+    0% {
+        transform: rotate(-45deg);
+    }
 
+    50% {
+        transform: rotate(-315deg);
+    }
 
+    100% {
+        transform: rotate(45deg);
+    }
+}
 
 
 
@@ -88,11 +100,13 @@ body {
     &::before {
         content: '';
         position: absolute;
-        top: calc(50% - 223px);
+        top: calc(50% - 16px);
         left: calc(50% - 16px);
         background-color: red;
         width: 33px;
         height: 33px;
         border-radius: 50%;
     }
+    /*设置精灵球自行旋转的动画：名称：rotate；持续时间：5s；无限循环。*/
+    animation: rotate 5s infinite;
 }
