@@ -22,7 +22,7 @@
     --head-radius-bottom: 55px;
 }
 
-/*动画设置区*/
+/*精灵球动画设置区*/
 @keyframes rotate {
     0% {
         transform: rotate(-45deg);
@@ -34,6 +34,20 @@
 
     100% {
         transform: rotate(45deg);
+    }
+}
+
+@keyframes translating {
+    0% {
+        transform: translateX(-160%);
+    }
+
+    50% {
+        transform: translateX(160%);
+    }
+
+    100% {
+        transform: translateX(-160%);
     }
 }
 
@@ -54,7 +68,7 @@ body {
 /* 配置精灵球的容器 */
 .pokeball-container{
     margin: 50px auto;
-
+    animation: translating 5s infinite;
 }
 
 .ball {
