@@ -24,6 +24,8 @@
 }
 
 /*精灵球动画设置区*/
+
+/*精灵球自转动画*/
 @keyframes rotate {
     0% {
         transform: rotate(-45deg);
@@ -38,6 +40,7 @@
     }
 }
 
+/*精灵球X轴移动动画*/
 @keyframes translating {
     0% {
         transform: translateX(-160%);
@@ -52,7 +55,35 @@
     }
 }
 
+/*精灵球中心闪烁动画*/
+@keyframes color-change {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        /*设置为透明*/
+        background-color: transparent;
+    }
 
+    10%, 30%, 50%, 70%, 90% {
+        background-color: var(--red);
+    }
+}
+
+/*皮卡丘动画设置区*/
+/*皮卡丘耳朵动画*/
+@keyframes rotateLeftEar {
+    0%, 100% {transform: rotate(-25deg);}
+    50% {transform: rotate(-35deg);}
+}
+
+@keyframes rotateRightEar {
+    0%, 100% {transform: rotate(25deg);}
+    50% {transform: rotate(35deg);}
+}
+
+/*皮卡丘尾巴动画*/
+@keyframes rotateTail {
+    0%, 100% {transform: rotate(-25deg);}
+    50% {transform: rotate(-35deg);}
+}
 
 
 body {
@@ -121,6 +152,8 @@ body {
         width: 33px;
         height: 33px;
         border-radius: 50%;
+        /*精灵球中心设置闪烁动画*/
+        animation: color-change 5s infinite;
     }
     /*设置精灵球自行旋转的动画：名称：rotate；持续时间：5s；无限循环。*/
     animation: rotate 5s infinite;
@@ -142,6 +175,7 @@ body {
     position: relative;
     display: inline-block;
 
+    /*配置精灵双手的通用样式*/
     &::before,
     &::after {
         content: '';
@@ -338,6 +372,32 @@ body {
             height: 35px;
             border-radius: 5px;
             background-color: var(--orange);
+        }
+    }
+
+    /*皮卡丘的双手的样式*/
+    /*因前面已经有过通用的设置，此处只需添加皮卡丘双手的颜色即可*/
+    &::before,
+    &::after {
+        background-color: var(--orange);
+    }
+
+    /*设置鼠标浮上去的动画*/
+
+    &:hover {
+        /*耳朵和尾巴左右摇摆*/
+        .ear {
+            &:nth-child(1) {
+                /*变换时间：1.2s；无限循环*/
+                animation: rotateLeftEar 1.2s infinite;
+            }
+            &:nth-child(2) {
+                animation: rotateRightEar 1.2s infinite;
+            }
+        }
+
+        .tail {
+            animation: rotateTail 1.2s infinite;
         }
     }
 }
