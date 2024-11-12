@@ -15,6 +15,8 @@
     --yellow: #fff069;
     --orange: #ffe81d;
     --blue: #4ee4ff;
+    --water-blue: #1bdcff;
+    --baby-blue:#00c4e7;
     --pink: #ff70b3;
     --brown: #594944;
     --teal: #405955;
@@ -398,6 +400,63 @@ body {
 
         .tail {
             animation: rotateTail 1.2s infinite;
+        }
+    }
+}
+
+/*杰尼龟的样式*/
+#squirt {
+    /*杰尼龟头部的样式*/
+    .head {
+        background-color: var(--blue);
+
+        /*杰尼龟眼睛的样式*/
+        .eye {
+            background-color: var(--brown);
+        }
+    }
+
+    /*杰尼龟的双手的样式*/
+    &::before,
+    &::after {
+        background-color: var(--water-blue);
+    }
+
+    /*杰尼龟的尾巴的样式*/
+    .tail {
+        position: absolute;
+        left: calc(50% - 15px);
+        top: -40px;
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
+        border-left: 30px solid var(--water-blue);
+        transform-origin: center bottom;
+        transition: 0.3s;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+        }
+
+        &::before {
+            top: 0;
+            left: -14px;
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            background-color: var(--water-blue);
+        }
+
+        &::after {
+            top: 25px;
+            left: -10px;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            border-left: solid 3px var(--baby-blue);
+            border-top: solid 3px var(--baby-blue);
         }
     }
 }
