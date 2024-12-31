@@ -15,6 +15,8 @@
     /*深橙色*/
     --dark-orange: #ff7314;
     --yellow: #fff069;
+    /*明黄色*/
+    --bright-yellow: #ffe81d;
     --orange: #fe8d00;
     --blue: #4ee4ff;
     /*蓝绿色*/
@@ -25,7 +27,7 @@
     --grass-green: #00d6ba;
     /*水蓝色*/
     --water-blue: #1bdcff;
-    /*深蓝色*/
+    /*淡蓝色*/
     --baby-blue:#00c4e7;
     --pink: #ff70b3;
     --brown: #594944;
@@ -134,6 +136,14 @@
 @keyframes flicker {
     0% {transform: skewY(0deg);}
     100% {transform: skewY(10deg);}
+}
+
+/*妙蛙种子动画区*/
+/*背后种子动画*/
+@keyframes squish {
+    /*顺时针旋转45度，放大1.2倍*/
+    0% { transform: rotate(45deg) scale(1);}
+    100% { transform: rotate(45deg) scale(1.2);}
 }
 
 
@@ -409,7 +419,7 @@ body {
         top: -25px;
         width: 20px;
         height: 30px;
-        background-color: var(--orange);
+        background-color: var(--bright-yellow);
         /*逆时针旋转25度*/
         transform: rotate(-25deg);
         /*变换中心转换成底部中心*/
@@ -422,7 +432,7 @@ body {
             width: 50px;
             height: 35px;
             border-radius: 5px;
-            background-color: var(--orange);
+            background-color: var(--bright-yellow);
         }
     }
 
@@ -430,7 +440,7 @@ body {
     /*因前面已经有过通用的设置，此处只需添加皮卡丘双手的颜色即可*/
     &::before,
     &::after {
-        background-color: var(--orange);
+        background-color: var(--bright-yellow);
     }
 
     /*设置鼠标浮上去的动画*/
@@ -755,6 +765,26 @@ body {
             height: 100%;
             border-radius: 0 50% 100% 50%;
             background-color: var(--grass-green);
+        }
+    }
+
+    /*设置妙蛙种子的动画*/
+    &:hover {
+        /*耳朵的动画*/
+        .ear {
+            /*左耳向下移动5px，逆时针旋转55度*/
+            &:nth-child(1) {
+                transform: translateY(5px) rotate(-55deg);
+            }
+            /*右耳向下移动5px，顺时针旋转55度*/
+            &:nth-child(2) {
+                transform: translateY(5px) rotate(55deg);
+            }
+        }
+
+        /*背后种子的动画效果*/
+        .bulbs {
+            animation: squish 1.6s infinite;
         }
     }
 }
