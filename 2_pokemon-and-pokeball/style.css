@@ -101,6 +101,7 @@
     50% {transform: rotate(-35deg);}
 }
 
+/*杰尼龟动画设置区*/
 /*杰尼龟嘴巴动画*/
 @keyframes mouthOpen {
     0% {width: 25px;}
@@ -131,14 +132,15 @@
     }
 }
 
+/*小火龙动画设置区*/
 /*小火龙尾巴火焰燃烧的动画*/
-
 @keyframes flicker {
     0% {transform: skewY(0deg);}
     100% {transform: skewY(10deg);}
 }
 
-/*妙蛙种子动画区*/
+
+/*妙蛙种子动画设置区*/
 /*背后种子动画*/
 @keyframes squish {
     /*顺时针旋转45度，放大1.2倍*/
