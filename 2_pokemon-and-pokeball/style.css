@@ -12,16 +12,27 @@
     --black: #444;
     --red: var(--primary-color);
     --orange: #ff9147;
+    /*深橙色*/
     --dark-orange: #ff7314;
     --yellow: #fff069;
     --orange: #fe8d00;
     --blue: #4ee4ff;
+    /*蓝绿色*/
+    --blue-green: #0afbdc;
+    /*青绿色*/
+    --dark-green: #00bca4;
+    /*草绿色*/
+    --grass-green: #00d6ba;
+    /*水蓝色*/
     --water-blue: #1bdcff;
+    /*深蓝色*/
     --baby-blue:#00c4e7;
     --pink: #ff70b3;
     --brown: #594944;
     --teal: #405955;
     --mint: #56ffe9;
+    /*深青色*/
+    --dark-cyan: #00bca4;
     --head-radius-top: 50% 80px;
     --head-radius-bottom: 55px;
 }
@@ -622,8 +633,128 @@ body {
                 animation-duration: 0.2s;
             }
         }
+    }
+}
 
-        
+/*妙蛙种子的样式*/
+#bulba {
+    /*耳朵的样式*/
+    .ear {
+        position: absolute;
+        z-index: 3;
+        top: -10px;
+        height: 40px;
+        width: 55px;
+        border-top-left-radius: 50px 70px;
+        border-top-right-radius: 50px 70px;
+        background-color: var(--mint);
+        transform-origin: center bottom;
+        transition: 0.3s;
 
+        /*左边耳朵，位于距左边5px，逆时针旋转40度*/
+        &:nth-child(1) {
+            left: 5px;
+            transform: rotate(-40deg);
+        }
+        /*右边耳朵，位于距右边5px，顺时针旋转40度*/
+        &:nth-child(2) {
+            right: 5px;
+            transform: rotate(40deg);
+        }
+
+    }
+
+    /*头部的样式*/
+    .head {
+        /*颜色*/
+        background-color: var(--mint);
+
+        /*脸部的斑块*/
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: var(--dark-cyan);
+        }
+
+         /*左边大斑块的样式*/
+        &::before {
+            top: 40px;
+            left: 60px;
+            width: 35px;
+            height: 35px;
+            border-bottom-left-radius: 100%;
+            border-bottom-right-radius: 10px 40px;
+            border-top-left-radius: 40px 10px;
+            border-top-right-radius: 5px;
+            transform: rotate(-20deg);
+        }
+
+        /*右边小斑块的样式*/
+        &::after {
+            top: 20px;
+            right: 40px;
+            width: 20px;
+            height: 20px;
+            border-bottom-left-radius: 100%;
+            border-bottom-right-radius: 5px 10px;
+            border-top-left-radius: 10px 5px;
+            border-top-right-radius: 5px;
+            transform: rotate(20deg);
+        }
+    }
+
+    /*眼睛的样式*/
+    .eye {
+        background-color: var(--black);
+    }
+
+    /*双手的样式*/
+    &::before,
+    &::after {
+        background-color: var(--blue-green);
+    }
+
+    /*背部的种子样式*/
+    .bulbs {
+        /*主体样式*/
+        position: absolute;
+        z-index: 2;
+        top: -30px;
+        left: calc(50% - 50px);
+        width: 100px;
+        height: 100px;
+        transform: rotate(45deg);
+
+        /*两个副体样式*/
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            width: 80px;
+            height: 80px;
+            border-radius: 0 50% 100% 50%;
+            background-color: var(--dark-green);
+        }
+
+        /*左边的副题向左移动20px，向下移动25px，顺时针旋转15度*/
+        &::before {
+            transform: translate(-20px, 25px) rotate(15deg);
+        }
+        /*右边的副题向右移动25px，向上移动20px，顺时针旋转15度*/
+        &::after {
+            transform: translate(25px, -20px) rotate(-15deg);
+        }
+
+        /*种子的主体*/
+        .bulb {
+            position: absolute;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            border-radius: 0 50% 100% 50%;
+            background-color: var(--grass-green);
+        }
     }
 }
