@@ -118,6 +118,13 @@
     }
 }
 
+/*小火龙尾巴火焰燃烧的动画*/
+
+@keyframes flicker {
+    0% {transform: skewY(0deg);}
+    100% {transform: skewY(10deg;}
+}
+
 
 body {
     background-color: var(--primary-color);
@@ -594,6 +601,29 @@ body {
 
     /*小火龙的动画设置*/
     &:hover {
+        /*尾巴的动画设置*/
+
+        .tail {
+            /*逆时针转动15度*/
+            transform: rotate(-15deg);
+
+            /*火炎的动画*/
+
+            &::before,
+            &::after {
+                animation: flicker 0.4s infinite;
+            }
+
+            /*内外焰的动画持续时间不同，外焰多余内焰一倍，造成动画抖动的频率不一的效果*/
+            &::before {
+                animation-duration: 0.4s;
+            }
+            &::after {
+                animation-duration: 0.2s;
+            }
+        }
+
         
+
     }
 }
