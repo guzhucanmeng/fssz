@@ -12,8 +12,9 @@
     --black: #444;
     --red: var(--primary-color);
     --orange: #ff9147;
+    --dark-orange: #ff7314;
     --yellow: #fff069;
-    --orange: #ffe81d;
+    --orange: #fe8d00;
     --blue: #4ee4ff;
     --water-blue: #1bdcff;
     --baby-blue:#00c4e7;
@@ -529,5 +530,70 @@ body {
         .bubble {
             animation: bubbs 1.4s 0.4s infinite;
         }
+    }
+}
+
+/*小火龙的样式*/
+#char {
+    /*头部颜色*/
+    .head {
+        background-color: var(--orange);
+    }
+
+    /*眼睛颜色*/
+    .eye {
+        background-color: var(--teal);
+    }
+
+    /*双手的颜色*/
+    &::before,
+    &::after {
+        background-color: var(--dark-orange);
+    }
+
+    /*尾巴的样式*/
+    .tail {
+        /*尾巴的主体部分*/
+        position: absolute;
+        left: calc(50% - 10px);
+        top: -40px;
+        width: 90px;
+        height: 100px;
+        border-radius: 50px;
+        border-left: 35px solid var(--dark-orange);
+        transform-origin: center bottom;
+        transition: 0.3s;
+
+        /*尾巴末端的火炎*/
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+        }
+
+        /*火炎的外焰*/
+        &::before {
+            left: calc(50% - 40px);
+            top: -35px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50% 0 50% 50%;
+            background-color: var(--yellow);
+        }
+
+        /*火炎的焰芯*/
+        &::after {
+            left: calc(50% - 30px);
+            top: -15px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50% 0 50% 100%;
+            background-color: var(--red);
+        }
+    }
+
+    /*小火龙的动画设置*/
+    &:hover {
+        
     }
 }
