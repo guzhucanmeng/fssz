@@ -37,3 +37,4 @@
 
 1. [十中排行榜](./1_list-hover-effect/)
 2. [宝可梦橱窗](./2_pokemon-and-pokeball/)
+ 3 [抚顺十中官网](./3_lnfssz.com/）
