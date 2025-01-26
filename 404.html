@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>请求不被许可</title>
+    <style type="text/css">
+        <!--
+        body {margin: 0px; padding:0px; font-family:"微软雅黑", Arial, "Trebuchet MS", Verdana, Georgia,Baskerville,Palatino,Times; font-size:16px;}
+        div{margin-left:auto; margin-right:auto;}
+        a {text-decoration: none; color: #1064A0;}
+        a:hover {color: #0078D2;cursor: pointer}
+        img { border:none; }
+        h1,h2,h3,h4 {
+            /*    display:block;*/
+            margin:0;
+            font-weight:normal;
+            font-family: "微软雅黑", Arial, "Trebuchet MS", Helvetica, Verdana ;
+        }
+        h1{font-size:44px; color:#0188DE; padding:20px 0px 10px 0px;}
+        h2{color:#0188DE; font-size:16px; padding:10px 0px 40px 0px;}
+        #wrapper{width:100%;}
+        #page{width:910px; padding:20px 20px 40px 20px; margin-top:80px;}
+ 
+        .button{width:180px; height:28px; margin-left:0px; margin-top:10px; background:#009CFF; border-bottom:4px solid #0188DE; text-align:center;}
+        .button a{width:180px; height:28px; display:block; font-size:14px; color:#fff; }
+        .button a:hover{ background:#5BBFFF;}
+ 
+        a.apply-btn {
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            background: #0188DE;
+            font-size: 20px;
+            color: #cdfff7;
+            text-align: center;
+        }
+        .detail-info{
+            padding: 10px 0;
+            border: 1px solid red;
+            height: auto;
+            width: 400px;
+            position: absolute;
+            left: 0;
+            top:21px;
+            background: #fff;
+            border-radius: 3px;
+            display: none;
+        }
+        .active .detail-info{
+            display: block;
+        }
+        .msg-item{
+            padding:0 20px;
+            line-height: 26px;
+            font-size: 14px;
+            color:#000;
+        }
+        .msg-item label{
+            float:left;
+            height: 26px;
+            line-height: 26px;
+            width:100px;
+            text-align: right;
+        }
+        .msg-item div{
+            overflow: hidden;
+            line-height: 26px;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+        -->
+    </style></head>
+ 
+<body>
+<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script> 
+<div id="wrapper">
+    <div id="page" style="border-style:dashed; border-color:#e4e4e4; line-height:30px;  no-repeat right 130px;">
+        <h1 style="text-align: center;">很抱歉, 您的操作被防火墙拦截！</h1>
+        <h2 style="text-align: center;">Sorry, Do not do it. </h2>
+        <p style="text-align: center;">
+         <font color="green">您的IP地址已被记录：</font>
+         <font color="red">
+         <script type="text/javascript"> 
+    document.write(returnCitySN["cip"]  + ', 地区:' + returnCitySN["cname"]+",浏览器版本:"+getBrowserInfo());
+     
+    function getBrowserInfo()
+{
+  var agent = navigator.userAgent.toLowerCase() ;
+ 
+  var regStr_ie = /msie [\d.]+;/gi ;
+  var regStr_ff = /firefox\/[\d.]+/gi
+  var regStr_chrome = /chrome\/[\d.]+/gi ;
+  var regStr_saf = /safari\/[\d.]+/gi ;
+   
+  //IE
+  if(agent.indexOf("msie") > 0)
+  {
+    return agent.match(regStr_ie) ;
+  }
+ 
+  //firefox
+  if(agent.indexOf("firefox") > 0)
+  {
+    return agent.match(regStr_ff) ;
+  }
+ 
+  //Chrome
+  if(agent.indexOf("chrome") > 0)
+  {
+    return agent.match(regStr_chrome) ;
+  }
+ 
+  //Safari
+  if(agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0)
+  {
+    return agent.match(regStr_saf) ;
+  }
+ 
+}
+  </script></font></p>
+    </div>
+ 
+ 
+</div>
+</body>
+</html>
