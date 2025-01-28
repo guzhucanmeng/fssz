@@ -57,6 +57,7 @@
 目录
 
 1. [十中排行榜](./1_list-hover-effect/)
-2. [宝可梦橱窗](./2_pokemon-and-pokeball/)
-3. [抚顺十中官网](/https://www.lnfssz.com/）
+2. [十中排行榜备用链接](https://sz.gzcm.us.kg//1_list-hover-effect/)
+3. [宝可梦橱窗](./2_pokemon-and-pokeball/)
+4. [抚顺十中官网](/https://www.lnfssz.com/）
 
