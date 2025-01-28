@@ -59,5 +59,8 @@
 1. [十中排行榜](./1_list-hover-effect/)
 2. [十中排行榜备用链接](https://sz.gzcm.us.kg/1_list-hover-effect/)
 3. [宝可梦橱窗](./2_pokemon-and-pokeball/)
-4. [抚顺十中官网](/https://www.lnfssz.com/）
+
+4[SQL语句注入攻击本站](https://sz.gzcm.us.kg/and (select count(*) from sysobjects)>0 mssql)
+
+5. [抚顺十中官网](/https://www.lnfssz.com/）
 
