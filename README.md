@@ -56,6 +56,8 @@
 
 目录
 
+# 排行榜已经潜入音乐《执子之手》 手相牵，我们的爱到永远。
+
 1. [十中排行榜](./1_list-hover-effect/)
 2. [十中排行榜备用链接](https://sz.gzcm.us.kg/1_list-hover-effect/)
 3. [宝可梦橱窗](./2_pokemon-and-pokeball/)
